@@ -1,6 +1,6 @@
 module.exports = {
 	siteMetadata: {
-		title: 'Contentful + Gatsby',
+		title: 'Contentful + Gatsby + Netlify',
 	},
 	plugins: [
 		'gatsby-plugin-react-helmet',
