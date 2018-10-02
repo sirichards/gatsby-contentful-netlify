@@ -6,5 +6,3 @@
 # current ones.
 [context.preview] # 'staging' is a branch name
   NODE_ENV = "preview"
-  ACTIVE_ENV = "preview"
-  command = "echo 'preview branch'"
