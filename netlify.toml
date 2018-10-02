@@ -5,6 +5,6 @@
 # will take these settings and override their
 # current ones.
 [context.preview] # 'staging' is a branch name
-  command = "gatsby build"
+  command = "NODE_ENV=preview gatsby build"
   NODE_ENV = "preview"
   ACTIVE_ENV = "preview"
