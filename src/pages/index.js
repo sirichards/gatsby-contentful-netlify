@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 
 const IndexPage = ({data}) => (
 	<Layout>
-		<h1>{process.env.NODE_ENV}</h1>
+		<h1>{process.env.ACTIVE_ENV}</h1>
 		<h1>Hi people</h1>
 		<p>Welcome to your new Gatsby.</p>
 		<Link to="/page-2/">Go to page 2</Link>
