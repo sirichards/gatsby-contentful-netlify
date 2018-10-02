@@ -1,3 +1,6 @@
+[Settings]
+  ID = "86937508-6326-4a4b-8e23-a41e5072bcea"
+
 # Specific branch context: Deploys from this branch
 # will take these settings and override their
 # current ones.
