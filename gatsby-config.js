@@ -1,3 +1,7 @@
+require("dotenv").config({
+	path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
 	siteMetadata: {
 		title: 'Contentful + Gatsby + Netlify',
@@ -8,7 +12,26 @@ module.exports = {
 			resolve: `gatsby-source-contentful`,
 			options: {
 				spaceId: `zay2hx1t09mg`,
-				accessToken: `4777fc5d724e1378a0c6f7de5cae1d26fd5de094941fb0b6cf516fe71d213ea9`,
+				accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+				host: process.env.CONTENTFUL_HOST_URL,
+			},
+		},
+		{
+		resolve: `gatsby-plugin-google-analytics`,
+			options: {
+				trackingId: "UA-126789750-1",
+				// Puts tracking script in the head instead of the body
+				head: true,
+				// Setting this parameter is optional
+				// anonymize: true,
+				// Setting this parameter is also optional
+				// respectDNT: true,
+				// Enables Google Optimize using your container Id
+				optimizeId: "GTM-5T7WGCQ",
+				// Any additional create only fields (optional)
+				// sampleRate: 5,
+				// siteSpeedSampleRate: 10,
+				// cookieDomain: "example.com",
 			},
 		},
 		{

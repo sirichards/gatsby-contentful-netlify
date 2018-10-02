@@ -1,0 +1,5 @@
+# Specific branch context: Deploys from this branch
+# will take these settings and override their
+# current ones.
+[context.preview] # 'staging' is a branch name
+  NODE_ENV = "preview"
