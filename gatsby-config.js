@@ -1,11 +1,15 @@
-let activeEnv = process.env.ACTIVE_ENV
+// let activeEnv = process.env.ACTIVE_ENV
 
-if (!activeEnv) {
-	activeEnv = "development"
-}
+// if (!activeEnv) {
+// 	activeEnv = "development"
+// } else if (activeEnv === "preview") {
+// 	activeEnv = "preview"
+// }
+
+// activeEnv = "preview"
 
 require("dotenv").config({
-	path: `.env.${activeEnv}`,
+	path: `.env.${process.env.NODE_ENV}`,
 })
 
 module.exports = {
