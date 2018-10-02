@@ -6,4 +6,4 @@
 # current ones.
 [context.preview] # 'staging' is a branch name
   NODE_ENV = "preview"
-  command = "make preview"
+  command = "gatsby build"
