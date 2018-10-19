@@ -17,7 +17,9 @@ module.exports = {
 		title: 'Contentful + Gatsby + Netlify',
 	},
 	plugins: [
+		'gatsby-plugin-resolve-src',
 		'gatsby-plugin-react-helmet',
+		`gatsby-transformer-remark`,
 		{
 			resolve: `gatsby-source-contentful`,
 			options: {
