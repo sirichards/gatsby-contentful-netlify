@@ -7,17 +7,17 @@ class ContentBlocks extends Component {
     render() {
 
         const { data } = this.props
-        const acfFields = data.acf.flexible_content_page
+        const contentBlocks = data.contentBlocks
 
-        const blocks = acfFields.map(acf => {
+        const blocks = contentBlocks.map(block => {
 
-            const id = acf.id
+            const id = block.id
 
-            switch (acf.__typename) {
-                case 'WordPressAcf_full_width_text':
-                    return <FullWidthText data={data} key={id} />
-                case 'WordPressAcf_2_columns_text':
-                    return <ImageText data={data} key={id} />
+            switch (block.__typename) {
+                case 'ContentfulContentBlockTextFullWidth':
+                    return <FullWidthText data={block} key={id} />
+                case 'ContentfulContentBlockImageAndText':
+                    return <ImageText data={block} key={id} />
                 default:
                     return;
             }
