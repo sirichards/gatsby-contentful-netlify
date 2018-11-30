@@ -15,9 +15,9 @@ class Page extends Component {
         return (
             <Layout>
                 <h1>{title}</h1>
-                {/* {data.acf.flexible_content_page !== null &&
+                {data.contentBlocks !== null && data.contentBlocks !== undefined &&
                     <ContentBlocks data={data} />
-                }   */}
+                }  
             </Layout>
         )
     }
@@ -31,6 +31,30 @@ export const pageQuery = graphql`
 query($id: String!) {
     contentfulPage(id: { eq: $id }) {
         title
+        contentBlocks {
+            __typename
+            ... on ContentfulContentBlockTextFullWidth {
+                id
+                text {
+                    childMarkdownRemark {
+                        html
+                    }
+                }
+            }
+            ... on ContentfulContentBlockImageAndText {
+                id
+                text {
+                    childMarkdownRemark {
+                        html
+                    }
+                }
+                image {
+                    file {
+                        url
+                    }
+                }
+            }
+        }
     }
 }
 `
